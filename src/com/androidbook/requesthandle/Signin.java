@@ -59,21 +59,6 @@ public class Signin implements HandleRequest{
 					values.put(Person.PERSON_PASSWORD, Utils.pad(password));
 					DBInterface.insert(stat, Person.TABLE_NAME, values);
 					
-					values = new HashMap<String, Object>();
-					values.put(UserLetter.ID, DBInterface.getMaxID(stat, UserLetter.TABLE_NAME));
-					values.put(UserLetter.UID, UID);
-					values.put(UserLetter.PRIVATE_LETTER_ID, Utils.pad(""));
-					values.put(UserLetter.NEW_LETTER_ID, Utils.pad(""));
-					DBInterface.insert(stat, UserLetter.TABLE_NAME, values);
-
-					values = new HashMap<String, Object>();
-					values.put(Friend.ID, DBInterface.getMaxID(stat, Friend.TABLE_NAME));
-					values.put(Friend.UID, UID);
-					values.put(Friend.FRIEND_UID, Utils.pad(UID));
-					values.put(Friend.NEW_UID, Utils.pad(""));
-					values.put(Friend.DETELE_UID, Utils.pad(""));
-					DBInterface.insert(stat, Friend.TABLE_NAME, values);
-
 					stat.close();
 					result = 0 ;
 				}
