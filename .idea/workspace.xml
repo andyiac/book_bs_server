@@ -4,7 +4,6 @@
     <list default="true" id="20677f5d-f52e-4a46-8926-bab014d132e7" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_19_bin2.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/androidbook/test/DBTest.java" afterPath="$PROJECT_DIR$/src/com/androidbook/test/DBTest.java" />
     </list>
     <ignored path="book_server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -905,12 +904,12 @@
       <workItem from="1400570273715" duration="1068000" />
       <workItem from="1400583942417" duration="586000" />
       <workItem from="1400634916490" duration="2485000" />
-      <workItem from="1400637414144" duration="9958000" />
+      <workItem from="1400637414144" duration="10368000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14097000" />
+    <option name="totallyTimeSpent" value="14507000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
