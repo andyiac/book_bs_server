@@ -1,10 +1,10 @@
 package com.androidbook.databasesinterface;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
  * 
@@ -19,7 +19,13 @@ public class DataBaseManager {
 	private  String driverClass = "com.mysql.jdbc.Driver";
 	// mysql数据库地址
 //	private  String jdbcUrl = "jdbc:mysql://localhost:3306/first";
-	private  String jdbcUrl = "jdbc:mysql://localhost:3307/jwgl";
+	private  String jdbcUrl = "jdbc:mysql://localhost:3306/may_stv";
+
+
+
+    //数据库名称
+    private static String db_name = "may_stv";
+
 	// 用户名
 	private  String user = "root";
 	// 密码
@@ -57,6 +63,9 @@ public class DataBaseManager {
 		this.password = password;
 	}
 
+     public static String getDb_name() {
+        return db_name;
+    }
 	private DataBaseManager(){
 		
 		cpds = new ComboPooledDataSource();

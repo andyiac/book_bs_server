@@ -1,18 +1,13 @@
 package com.androidbook.requesthandle;
 
+import com.androidbook.databasesinterface.*;
+import com.androidbook.utils.Utils;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
-
-import com.androidbook.databasesinterface.DBInterface;
-import com.androidbook.databasesinterface.DataBaseManager;
-import com.androidbook.databasesinterface.Friend;
-import com.androidbook.databasesinterface.Person;
-import com.androidbook.databasesinterface.PersonInfo;
-import com.androidbook.databasesinterface.UserLetter;
-import com.androidbook.utils.Utils;
 
 public class Signin implements HandleRequest{
 
@@ -55,7 +50,7 @@ public class Signin implements HandleRequest{
 					DBInterface.insert(stat, PersonInfo.TABLE_NAME, values);
 					
 					values = new HashMap<String, Object>();
-//					System.out.println("------Signin-->>"+values.get(UID));
+					System.out.println("------Signin-->>"+values.get(UID));
 					
 					
 					values.put(Person.ID, DBInterface.getMaxID(stat, Person.TABLE_NAME));
