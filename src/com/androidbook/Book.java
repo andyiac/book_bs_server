@@ -1,13 +1,5 @@
 package com.androidbook;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.androidbook.RequestParam.RequestParam;
 import com.androidbook.RequestParam.RequestParamAnalysis;
 import com.androidbook.ResponseParam.BulidResponseParam;
@@ -15,6 +7,13 @@ import com.androidbook.authenticate.AuthenticateUser;
 import com.androidbook.requesthandle.HandleRequest;
 import com.androidbook.requesthandle.HandleRequestFactory;
 import com.androidbook.utils.Utils;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Book extends HttpServlet {
 
@@ -47,8 +46,6 @@ public class Book extends HttpServlet {
 				int authenticateUser = -1;
 				// if (requestType != "Signin") {
 				if ("Signin".endsWith(requestType)) {
-					if (D)
-						System.out.println("----book.java--注册请求--1");
 					authenticateUser = AuthenticateUser.getInstance()
 							.IsIllegalUser(String.valueOf(UID), password);
 				}
@@ -56,8 +53,6 @@ public class Book extends HttpServlet {
 				// if (requestType != "Signin" && authenticateUser == -1) {
 				if ("Signin".endsWith(requestType) && authenticateUser == -1) {
 					// 数据库中没有此用户则插入新记录
-					if (D)
-						System.out.println("----book.java-注册请求--2");
 					responseParam = BulidResponseParam.getInstance()
 							.bulidParam(authenticateUser, requestType, "");
 					HandleRequest handle = HandleRequestFactory
@@ -74,8 +69,6 @@ public class Book extends HttpServlet {
 				// 登录请求
 				if ("Login".endsWith(requestType)) {
 					// 获得处理请求的具体文件
-					if (D)
-						System.out.println(TAG + ">>>>--book.java 3-登录请求");
 					HandleRequest handle = HandleRequestFactory
 							.getHandleRequestInstance(requestType);
 					int result = handle.handleRequest(
@@ -109,6 +102,7 @@ public class Book extends HttpServlet {
 				response.setCharacterEncoding("utf-8");
 				System.out.println("输出 ： " + responseParam.toString());
 
+                //利用PrintWriter对象的方法将数据发送给客户端
 				PrintWriter out = response.getWriter();
 				out.println(responseParam);
 				out.flush();
@@ -124,7 +118,7 @@ public class Book extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		doGet(req, resp);
+		doGet(req, resp);//这条语句的作用是，当客户端发送POST请求时，调用doGet()方法进行处理
 	}
 
 }
