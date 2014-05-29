@@ -66,4 +66,22 @@ public class DBTest {
         Assert.assertEquals(0,result);
     }
 
+    @Test
+    public void mCracklePop(){
+        for(int i=1 ;i<=100 ;i++ ){
+           String m = "";
+           if( i%3==0 && i%5 !=0){
+               m = "crackle";
+           }else if(i%5==0 && i%3 !=0){
+               m ="pop";
+            }else if(i%5==0 && i%3 ==0){
+               m = "CracklePop";
+           } else {
+               m = String.valueOf(i);
+            }
+            System.out.println("====>>"+m);
+        }
+    }
+
+
 }

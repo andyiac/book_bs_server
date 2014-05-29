@@ -1,16 +1,15 @@
 package com.androidbook.requesthandle;
 
+import com.androidbook.databasesinterface.DataBaseManager;
+import com.androidbook.databasesinterface.PersonInfo;
+import com.androidbook.utils.Utils;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
-import com.androidbook.databasesinterface.DataBaseManager;
-import com.androidbook.databasesinterface.PersonInfo;
-import com.androidbook.utils.Utils;
 
 public class GetPersonInfo implements HandleRequest{
 
@@ -36,8 +35,8 @@ public class GetPersonInfo implements HandleRequest{
 				stat.close();
 			}
 		} catch (Exception e) {
+            System.out.println("获取用户资料出错： " + e.toString());
 			e.printStackTrace();
-			System.out.println("获取用户资料出错： " + e.toString());
 		} finally {
 			try {
 				conn.close();

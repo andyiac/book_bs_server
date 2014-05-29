@@ -62,6 +62,7 @@ public class PersonInfo extends DBInterface{
 		.append(table)
 		.append(" where UID=")
 		.append(uid);
+        System.out.println("==========PersonInfo ==query sql===>>>"+sb.toString());
 		rs = stat.executeQuery(sb.toString());
 		return rs;
 	}

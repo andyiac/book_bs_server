@@ -69,6 +69,7 @@ public class Book extends HttpServlet {
 				// 登录请求
 				if ("Login".endsWith(requestType)) {
 					// 获得处理请求的具体文件
+                    System.out.println("++++++++>>>>>Book.java=requestType = Login==>"+requestType);
 					HandleRequest handle = HandleRequestFactory
 							.getHandleRequestInstance(requestType);
 					int result = handle.handleRequest(

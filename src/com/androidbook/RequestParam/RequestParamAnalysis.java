@@ -30,7 +30,8 @@ public class RequestParamAnalysis {
 	public RequestParam analysisRequestParam(String json) {
 		
 		RequestParam request = this.requestParam.clone();
-		
+
+        System.out.println("========= RequestParamAnalysis.java ====== request params json===>> "+json);
 		JSONObject jsonObject = JSONObject.fromObject(json);
 		request.setUserName(jsonObject.getString("userName"));
 		request.setPassword(jsonObject.getString("password"));
