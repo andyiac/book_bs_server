@@ -7,8 +7,8 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>Book</servlet-name>
-    <servlet-class>com.androidbook.Book</servlet-class>
+    <servlet-name>Foo</servlet-name>
+    <servlet-class>com.androidbook.Foo</servlet-class>
   </servlet>
   
   <servlet>
@@ -19,8 +19,8 @@
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>Book</servlet-name>
-    <url-pattern>/Book</url-pattern>
+    <servlet-name>Foo</servlet-name>
+    <url-pattern>/Foo</url-pattern>
   </servlet-mapping>
 <servlet-mapping>
     <servlet-name>SigninServlet</servlet-name>
